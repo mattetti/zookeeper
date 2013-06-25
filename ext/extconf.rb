@@ -15,6 +15,7 @@ if cc = RbConfig::CONFIG['CC'] && cc =~ /^gcc/
   $CC = cc
   $EXTRA_CONF = "#{$EXTRA_CONF} CC=#{$CC}"
 end
+$EXTRA_CONF = "#{$EXTRA_CONF} CC=llvm-gcc"
 
 $CFLAGS = "#{$CFLAGS}".gsub("$(cflags)", "").gsub("-arch ppc", "")
 $LDFLAGS = "#{$LDFLAGS}".gsub("$(ldflags)", "").gsub("-arch ppc", "")
